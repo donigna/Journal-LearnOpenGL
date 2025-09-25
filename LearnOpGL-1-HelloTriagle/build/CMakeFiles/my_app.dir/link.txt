@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/my_app.dir/src/main.cpp.o CMakeFiles/my_app.dir/glad/src/glad.c.o -o my_app   -L/home/donigna/local/lib  -Wl,-rpath,/home/donigna/local/lib -lglfw 

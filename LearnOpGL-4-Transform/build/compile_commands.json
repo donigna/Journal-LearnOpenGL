@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/donigna/OpenGL/LearnOpGL-4-Transform/build",
+  "command": "/usr/bin/g++  -I/home/donigna/OpenGL/LearnOpGL-4-Transform/external -I/home/donigna/OpenGL/LearnOpGL-4-Transform/include -g -std=gnu++17 -o CMakeFiles/my_app.dir/src/main.cpp.o -c /home/donigna/OpenGL/LearnOpGL-4-Transform/src/main.cpp",
+  "file": "/home/donigna/OpenGL/LearnOpGL-4-Transform/src/main.cpp",
+  "output": "CMakeFiles/my_app.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/donigna/OpenGL/LearnOpGL-4-Transform/build",
+  "command": "/usr/bin/gcc  -I/home/donigna/OpenGL/LearnOpGL-4-Transform/external -I/home/donigna/OpenGL/LearnOpGL-4-Transform/include -g -o CMakeFiles/my_app.dir/src/glad.c.o -c /home/donigna/OpenGL/LearnOpGL-4-Transform/src/glad.c",
+  "file": "/home/donigna/OpenGL/LearnOpGL-4-Transform/src/glad.c",
+  "output": "CMakeFiles/my_app.dir/src/glad.c.o"
+}
+]

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/donigna/OpenGL/LearnOpGL-1/build",
+  "command": "/usr/bin/g++  -I/home/donigna/local/include -I/home/donigna/OpenGL/LearnOpGL-1/glad/include -g -std=gnu++17 -o CMakeFiles/my_app.dir/src/main.cpp.o -c /home/donigna/OpenGL/LearnOpGL-1/src/main.cpp",
+  "file": "/home/donigna/OpenGL/LearnOpGL-1/src/main.cpp",
+  "output": "CMakeFiles/my_app.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/donigna/OpenGL/LearnOpGL-1/build",
+  "command": "/usr/bin/gcc  -I/home/donigna/local/include -I/home/donigna/OpenGL/LearnOpGL-1/glad/include -g -o CMakeFiles/my_app.dir/glad/src/glad.c.o -c /home/donigna/OpenGL/LearnOpGL-1/glad/src/glad.c",
+  "file": "/home/donigna/OpenGL/LearnOpGL-1/glad/src/glad.c",
+  "output": "CMakeFiles/my_app.dir/glad/src/glad.c.o"
+}
+]

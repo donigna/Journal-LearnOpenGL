@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/build",
+  "command": "/usr/bin/g++  -I/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/external -I/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/include -g -std=gnu++17 -o CMakeFiles/my_app.dir/src/main.cpp.o -c /home/donigna/OpenGL/LearnOpGL-5-CoorSystem/src/main.cpp",
+  "file": "/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/src/main.cpp",
+  "output": "CMakeFiles/my_app.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/build",
+  "command": "/usr/bin/gcc  -I/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/external -I/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/include -g -o CMakeFiles/my_app.dir/src/glad.c.o -c /home/donigna/OpenGL/LearnOpGL-5-CoorSystem/src/glad.c",
+  "file": "/home/donigna/OpenGL/LearnOpGL-5-CoorSystem/src/glad.c",
+  "output": "CMakeFiles/my_app.dir/src/glad.c.o"
+}
+]
