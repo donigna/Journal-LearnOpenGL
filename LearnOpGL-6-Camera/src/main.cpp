@@ -18,10 +18,11 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
 
 // Input
-// void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode);
-// void mouse_callback(GLFWwindow *window, double xpos, double ypos);
-// void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
-// void do_movement();
+void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode);
+void mouse_callback(GLFWwindow *window, double xpos, double ypos);
+void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
+glm::mat4 calculate_lookAt_matrix(glm::vec3 position, glm::vec3 target, glm::vec3 worldUp);
+void do_movement();
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -37,6 +38,8 @@ GLfloat pitch = 0.0f;
 GLfloat lastX = SCR_WIDTH / 2.0;
 GLfloat lastY = SCR_HEIGHT / 2.0;
 GLfloat fov = 45.0f;
+
+Camera cam(cameraPos);
 bool keys[1024];
 
 GLfloat deltaTime = 0;
@@ -77,14 +80,11 @@ int main()
         return -1;
     }
 
-    // Camere
-    Camera cam();
-
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetKeyCallback(window, key_callback);
-    // glfwSetCursorPosCallback(window, Camera::ProccessMouseMovement);
-    // glfwSetScrollCallback(window, scroll_callback);
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
@@ -256,7 +256,7 @@ int main()
         // input
         // -----
         glfwPollEvents();
-        // do_movement();
+        do_movement();
 
         // render
         // ------
@@ -280,7 +280,7 @@ int main()
 
         model = glm::rotate(model, (GLfloat)glfwGetTime() * glm::radians(50.0f), glm::vec3(.5f, 1.0f, 0.0f));
         // view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-        projection = glm::perspective(glm::radians(fov), GLfloat(SCR_WIDTH) / GLfloat(SCR_HEIGHT), 0.1f, 100.0f);
+        projection = glm::perspective(glm::radians(cam.Zoom), GLfloat(SCR_WIDTH) / GLfloat(SCR_HEIGHT), 0.1f, 100.0f);
         GLint modelLoc = glGetUniformLocation(ourShader.Program, "model");
         GLint viewLoc = glGetUniformLocation(ourShader.Program, "view");
         GLint projectionLoc = glGetUniformLocation(ourShader.Program, "projection");
@@ -290,7 +290,9 @@ int main()
         // GLfloat camZ = cos(glfwGetTime()) * radius;
         // view = glm::lookAt(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-        glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+        // glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+        glm::mat4 view = cam.GetViewMatrix();
+        // glm::mat4 view = calculate_lookAt_matrix(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
@@ -343,19 +345,29 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
     }
 }
 
-// void do_movement()
-// {
-//     // Camera controls
-//     GLfloat cameraSpeed = 5.0f * deltaTime;
-//     if (keys[GLFW_KEY_W])
-//         cameraPos += cameraSpeed * cameraFront;
-//     if (keys[GLFW_KEY_S])
-//         cameraPos -= cameraSpeed * cameraFront;
-//     if (keys[GLFW_KEY_A])
-//         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-//     if (keys[GLFW_KEY_D])
-//         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-// }
+void do_movement()
+{
+    // Camera controls
+    // GLfloat cameraSpeed = 5.0f * deltaTime;
+    // if (keys[GLFW_KEY_W])
+    //     cameraPos += cameraSpeed * cameraFront;
+    // if (keys[GLFW_KEY_S])
+    //     cameraPos -= cameraSpeed * cameraFront;
+    // if (keys[GLFW_KEY_A])
+    //     cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    // if (keys[GLFW_KEY_D])
+    //     cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+
+    // New movement
+    if (keys[GLFW_KEY_W])
+        cam.ProccessKeyboard(FORWARD, deltaTime);
+    if (keys[GLFW_KEY_S])
+        cam.ProccessKeyboard(BACKWARD, deltaTime);
+    if (keys[GLFW_KEY_A])
+        cam.ProccessKeyboard(LEFT, deltaTime);
+    if (keys[GLFW_KEY_D])
+        cam.ProccessKeyboard(RIGHT, deltaTime);
+}
 
 // bool firstMouse = true;
 // void mouse_callback(GLFWwindow *window, double xpos, double ypos)
@@ -394,6 +406,24 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 //     cameraFront = glm::normalize(front);
 // }
 
+void mouse_callback(GLFWwindow *window, double xpos, double ypos)
+{
+    static bool firstMouse = true;
+    if (firstMouse)
+    {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos; // dibalik supaya arah naik/turun normal
+    lastX = xpos;
+    lastY = ypos;
+
+    cam.ProccessMouseMovement(xoffset, yoffset);
+}
+
 // void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 // {
 //     if (fov >= 1.0f && fov <= 45.0f)
@@ -404,11 +434,47 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 //         fov = 45.0f;
 // }
 
+glm::mat4 calculate_lookAt_matrix(glm::vec3 position, glm::vec3 target, glm::vec3 worldUp)
+{
+    // 1. Position = known
+    // 2. Calculate cameraDirection
+    glm::vec3 zaxis = glm::normalize(position - target);
+    // 3. Get positive right axis vector
+    glm::vec3 xaxis = glm::normalize(glm::cross(glm::normalize(worldUp), zaxis));
+    // 4. Calculate camera up vector
+    glm::vec3 yaxis = glm::cross(zaxis, xaxis);
+
+    // Create translation and rotation matrix
+    // In glm we access elements as mat[col][row] due to column-major layout
+    glm::mat4 translation = glm::mat4(1.0f); // Identity matrix by default
+    translation[3][0] = -position.x;         // Third column, first row
+    translation[3][1] = -position.y;
+    translation[3][2] = -position.z;
+    glm::mat4 rotation = glm::mat4(1.0f);
+    rotation[0][0] = xaxis.x; // First column, first row
+    rotation[1][0] = xaxis.y;
+    rotation[2][0] = xaxis.z;
+    rotation[0][1] = yaxis.x; // First column, second row
+    rotation[1][1] = yaxis.y;
+    rotation[2][1] = yaxis.z;
+    rotation[0][2] = zaxis.x; // First column, third row
+    rotation[1][2] = zaxis.y;
+    rotation[2][2] = zaxis.z;
+
+    // Return lookAt matrix as combination of translation and rotation matrix
+    return rotation * translation; // Remember to read from right to left (first translation then rotation)
+}
+
+void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
+{
+    cam.ProccessMouseScroll(yoffset);
+}
+
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
-// void framebuffer_size_callback(GLFWwindow *window, int width, int height)
-// {
-//     // make sure the viewport matches the new window dimensions; note that width and
-//     // height will be significantly larger than specified on retina displays.
-//     glViewport(0, 0, width, height);
-// }
+void framebuffer_size_callback(GLFWwindow *window, int width, int height)
+{
+    // make sure the viewport matches the new window dimensions; note that width and
+    // height will be significantly larger than specified on retina displays.
+    glViewport(0, 0, width, height);
+}
