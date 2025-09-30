@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/build",
+  "command": "/usr/bin/g++  -I/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/external -I/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/include -g -std=gnu++17 -o CMakeFiles/my_app.dir/src/main.cpp.o -c /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/src/main.cpp",
+  "file": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/src/main.cpp",
+  "output": "CMakeFiles/my_app.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/build",
+  "command": "/usr/bin/gcc  -I/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/external -I/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/include -g -o CMakeFiles/my_app.dir/src/glad.c.o -c /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/src/glad.c",
+  "file": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-8-Lighting/src/glad.c",
+  "output": "CMakeFiles/my_app.dir/src/glad.c.o"
+}
+]

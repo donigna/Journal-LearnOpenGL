@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/donigna/OpenGL/LearnOpGL-1/glad/src/glad.c" "CMakeFiles/my_app.dir/glad/src/glad.c.o" "gcc" "CMakeFiles/my_app.dir/glad/src/glad.c.o.d"
-  "/home/donigna/OpenGL/LearnOpGL-1/src/main.cpp" "CMakeFiles/my_app.dir/src/main.cpp.o" "gcc" "CMakeFiles/my_app.dir/src/main.cpp.o.d"
+  "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/glad/src/glad.c" "CMakeFiles/my_app.dir/glad/src/glad.c.o" "gcc" "CMakeFiles/my_app.dir/glad/src/glad.c.o.d"
+  "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/src/main.cpp" "CMakeFiles/my_app.dir/src/main.cpp.o" "gcc" "CMakeFiles/my_app.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

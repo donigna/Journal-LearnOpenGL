@@ -16,4 +16,4 @@ add_executable(my_app
     src/main.cpp
     src/glad.c  
 )
-target_link_libraries(my_app PRIVATE glfw)
+target_link_libraries(my_app PRIVATE glfw SOIL GL m dl)

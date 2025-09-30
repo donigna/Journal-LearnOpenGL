@@ -72,7 +72,7 @@ int main()
 
     // glfw window creation
     // --------------------
-    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL - 6 - Camera", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL - 7 - Color", NULL, NULL);
     if (window == NULL)
     {
         cout << "Failed to create GLFW window" << endl;

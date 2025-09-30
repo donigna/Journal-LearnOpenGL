@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(LearnO)
+project(MyApp)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -14,4 +14,4 @@ add_executable(my_app
     src/main.cpp
     glad/src/glad.c    
 )
-target_link_libraries(my_app PRIVATE glfw)
+target_link_libraries(my_app PRIVATE glfw SOIL GL m dl)

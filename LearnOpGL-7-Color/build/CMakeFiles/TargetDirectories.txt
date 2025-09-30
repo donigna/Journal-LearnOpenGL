@@ -1,0 +1,3 @@
+/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-7-Color/build/CMakeFiles/my_app.dir
+/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-7-Color/build/CMakeFiles/edit_cache.dir
+/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-7-Color/build/CMakeFiles/rebuild_cache.dir

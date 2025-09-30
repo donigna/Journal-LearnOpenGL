@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/donigna/OpenGL/LearnOpGL-1
+CMAKE_SOURCE_DIR = /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/donigna/OpenGL/LearnOpGL-1/build
+CMAKE_BINARY_DIR = /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/my_app.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/my_app.dir/progress.make
 include CMakeFiles/my_app.dir/flags.make
 
 CMakeFiles/my_app.dir/src/main.cpp.o: CMakeFiles/my_app.dir/flags.make
-CMakeFiles/my_app.dir/src/main.cpp.o: /home/donigna/OpenGL/LearnOpGL-1/src/main.cpp
+CMakeFiles/my_app.dir/src/main.cpp.o: /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/src/main.cpp
 CMakeFiles/my_app.dir/src/main.cpp.o: CMakeFiles/my_app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/donigna/OpenGL/LearnOpGL-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/my_app.dir/src/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_app.dir/src/main.cpp.o -MF CMakeFiles/my_app.dir/src/main.cpp.o.d -o CMakeFiles/my_app.dir/src/main.cpp.o -c /home/donigna/OpenGL/LearnOpGL-1/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/my_app.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_app.dir/src/main.cpp.o -MF CMakeFiles/my_app.dir/src/main.cpp.o.d -o CMakeFiles/my_app.dir/src/main.cpp.o -c /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/src/main.cpp
 
 CMakeFiles/my_app.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/my_app.dir/src/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/donigna/OpenGL/LearnOpGL-1/src/main.cpp > CMakeFiles/my_app.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/src/main.cpp > CMakeFiles/my_app.dir/src/main.cpp.i
 
 CMakeFiles/my_app.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/my_app.dir/src/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/donigna/OpenGL/LearnOpGL-1/src/main.cpp -o CMakeFiles/my_app.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/src/main.cpp -o CMakeFiles/my_app.dir/src/main.cpp.s
 
 CMakeFiles/my_app.dir/glad/src/glad.c.o: CMakeFiles/my_app.dir/flags.make
-CMakeFiles/my_app.dir/glad/src/glad.c.o: /home/donigna/OpenGL/LearnOpGL-1/glad/src/glad.c
+CMakeFiles/my_app.dir/glad/src/glad.c.o: /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/glad/src/glad.c
 CMakeFiles/my_app.dir/glad/src/glad.c.o: CMakeFiles/my_app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/donigna/OpenGL/LearnOpGL-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_app.dir/glad/src/glad.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_app.dir/glad/src/glad.c.o -MF CMakeFiles/my_app.dir/glad/src/glad.c.o.d -o CMakeFiles/my_app.dir/glad/src/glad.c.o -c /home/donigna/OpenGL/LearnOpGL-1/glad/src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_app.dir/glad/src/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_app.dir/glad/src/glad.c.o -MF CMakeFiles/my_app.dir/glad/src/glad.c.o.d -o CMakeFiles/my_app.dir/glad/src/glad.c.o -c /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/glad/src/glad.c
 
 CMakeFiles/my_app.dir/glad/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_app.dir/glad/src/glad.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/donigna/OpenGL/LearnOpGL-1/glad/src/glad.c > CMakeFiles/my_app.dir/glad/src/glad.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/glad/src/glad.c > CMakeFiles/my_app.dir/glad/src/glad.c.i
 
 CMakeFiles/my_app.dir/glad/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_app.dir/glad/src/glad.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/donigna/OpenGL/LearnOpGL-1/glad/src/glad.c -o CMakeFiles/my_app.dir/glad/src/glad.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/glad/src/glad.c -o CMakeFiles/my_app.dir/glad/src/glad.c.s
 
 # Object files for target my_app
 my_app_OBJECTS = \
@@ -109,7 +109,7 @@ my_app: CMakeFiles/my_app.dir/src/main.cpp.o
 my_app: CMakeFiles/my_app.dir/glad/src/glad.c.o
 my_app: CMakeFiles/my_app.dir/build.make
 my_app: CMakeFiles/my_app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/donigna/OpenGL/LearnOpGL-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable my_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable my_app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/my_app.dir/clean:
 .PHONY : CMakeFiles/my_app.dir/clean
 
 CMakeFiles/my_app.dir/depend:
-	cd /home/donigna/OpenGL/LearnOpGL-1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/donigna/OpenGL/LearnOpGL-1 /home/donigna/OpenGL/LearnOpGL-1 /home/donigna/OpenGL/LearnOpGL-1/build /home/donigna/OpenGL/LearnOpGL-1/build /home/donigna/OpenGL/LearnOpGL-1/build/CMakeFiles/my_app.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-1-HelloTriagle/build/CMakeFiles/my_app.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/my_app.dir/depend
 

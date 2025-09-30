@@ -60,7 +60,7 @@ int main()
     // ---------------------
 
     // ## This code is using shader class
-    Shader ourShader("shader/shader.vs", "shader/shader.fg");
+    Shader ourShader("../glad/include/shader/shader.vs", "../glad/include/shader/shader.fg");
 
     // ## This commented code active when you're not using shader class
     // vert
