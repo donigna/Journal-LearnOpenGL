@@ -1,0 +1,1 @@
+/usr/bin/clang++ CMakeFiles/my_app.dir/src/main.cpp.o -o my_app  /usr/lib/x86_64-linux-gnu/libGLEW.so -lglfw -lSOIL -lm -ldl /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 
