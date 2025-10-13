@@ -1,0 +1,3 @@
+/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple Lighting/build/CMakeFiles/my_app.dir
+/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple Lighting/build/CMakeFiles/edit_cache.dir
+/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple Lighting/build/CMakeFiles/rebuild_cache.dir
