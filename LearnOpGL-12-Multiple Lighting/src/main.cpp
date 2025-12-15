@@ -1,15 +1,15 @@
 #include <iostream>
 #include <cmath>
 
-// GLEW
-#define GLEW_STATIC
-#include <GL/glew.h>
+// GLAD
+#include <glad/glad.h>
 
 // GLFW
 #include <GLFW/glfw3.h>
 
 // Other Libs
-#include <SOIL/SOIL.h>
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 // GLM Mathematics
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -65,10 +65,13 @@ int main()
     // GLFW Options
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-    // Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
-    glewExperimental = GL_TRUE;
-    // Initialize GLEW to setup the OpenGL Function pointers
-    glewInit();
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cerr << "Failed to initialize GLAS" << std::endl;
+        return -1;
+    }
+
+    stbi_set_flip_vertically_on_load(true);
 
     // Define the viewport dimensions
     glViewport(0, 0, WIDTH, HEIGHT);
@@ -176,24 +179,27 @@ int main()
     glGenTextures(1, &diffuseMap);
     glGenTextures(1, &specularMap);
     glGenTextures(1, &emissionMap);
-    int width, height;
+    int width, height, channels;
     unsigned char *image;
     // Diffuse map
-    image = SOIL_load_image(Assets::container2.c_str(), &width, &height, 0, SOIL_LOAD_RGB);
+    image = stbi_load(Assets::container2.c_str(), &width, &height, &channels, 0);
+
+    GLenum format = (channels == 4) ? GL_RGBA : GL_RGB;
+
     glBindTexture(GL_TEXTURE_2D, diffuseMap);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+    glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, image);
     glGenerateMipmap(GL_TEXTURE_2D);
-    SOIL_free_image_data(image);
+    stbi_image_free(image);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
     // Specular map
-    image = SOIL_load_image(Assets::container2_specular.c_str(), &width, &height, 0, SOIL_LOAD_RGB);
+    image = stbi_load(Assets::container2_specular.c_str(), &width, &height, &channels, 0);
     glBindTexture(GL_TEXTURE_2D, specularMap);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+    glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, image);
     glGenerateMipmap(GL_TEXTURE_2D);
-    SOIL_free_image_data(image);
+    stbi_image_free(image);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);

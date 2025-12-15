@@ -129,6 +129,30 @@ my_app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_app.dir/build.make CMakeFiles/my_app.dir/build
 .PHONY : my_app/fast
 
+external/glad/glad.o: external/glad/glad.c.o
+.PHONY : external/glad/glad.o
+
+# target to build an object file
+external/glad/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_app.dir/build.make CMakeFiles/my_app.dir/external/glad/glad.c.o
+.PHONY : external/glad/glad.c.o
+
+external/glad/glad.i: external/glad/glad.c.i
+.PHONY : external/glad/glad.i
+
+# target to preprocess a source file
+external/glad/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_app.dir/build.make CMakeFiles/my_app.dir/external/glad/glad.c.i
+.PHONY : external/glad/glad.c.i
+
+external/glad/glad.s: external/glad/glad.c.s
+.PHONY : external/glad/glad.s
+
+# target to generate assembly for a file
+external/glad/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_app.dir/build.make CMakeFiles/my_app.dir/external/glad/glad.c.s
+.PHONY : external/glad/glad.c.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... my_app"
+	@echo "... external/glad/glad.o"
+	@echo "... external/glad/glad.i"
+	@echo "... external/glad/glad.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

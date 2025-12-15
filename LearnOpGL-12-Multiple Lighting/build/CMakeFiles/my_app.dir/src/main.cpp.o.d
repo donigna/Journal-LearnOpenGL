@@ -171,26 +171,35 @@ CMakeFiles/my_app.dir/src/main.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/GL/glew.h \
- /usr/include/c++/13/cstdint \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glad/glad.h \
+ /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/GL/glu.h \
- /usr/include/GL/gl.h /usr/include/GLFW/glfw3.h /usr/include/SOIL/SOIL.h \
- /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/glm.hpp \
- /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/detail/_fixes.hpp \
- /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/detail/setup.hpp \
- /usr/include/c++/13/cassert /usr/include/assert.h \
- /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/detail/../simd/platform.h \
- /usr/include/c++/13/climits \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /usr/include/GLFW/glfw3.h \
+ /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/stb_image.h \
+ /usr/include/c++/13/stdlib.h /usr/include/string.h \
+ /usr/include/strings.h /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/13/cfloat \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/13/math.h \
+ /usr/include/assert.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h \
+ /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/glm.hpp \
+ /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/detail/_fixes.hpp \
+ /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/detail/setup.hpp \
+ /usr/include/c++/13/cassert \
+ /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/detail/../simd/platform.h \
+ /usr/include/c++/13/cstdint /usr/include/c++/13/climits \
+ /usr/include/c++/13/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
  /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/fwd.hpp \
  /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/detail/qualifier.hpp \
@@ -379,7 +388,7 @@ CMakeFiles/my_app.dir/src/main.cpp.o: \
  /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/gtc/../gtc/../ext/vector_int1_sized.hpp \
  /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/gtc/../gtc/../ext/vector_uint1.hpp \
  /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/gtc/../gtc/../ext/vector_uint1_sized.hpp \
- /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/13/cstring \
  /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/external/glm/gtc/type_ptr.inl \
  /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple\ Lighting/include/shader.h \
  /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \

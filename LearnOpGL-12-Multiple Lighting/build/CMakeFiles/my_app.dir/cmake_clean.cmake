@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/my_app.dir/external/glad/glad.c.o"
+  "CMakeFiles/my_app.dir/external/glad/glad.c.o.d"
   "CMakeFiles/my_app.dir/src/main.cpp.o"
   "CMakeFiles/my_app.dir/src/main.cpp.o.d"
   "my_app"
@@ -6,6 +8,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/my_app.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

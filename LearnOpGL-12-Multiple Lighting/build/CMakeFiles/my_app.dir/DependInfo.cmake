@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple Lighting/external/glad/glad.c" "CMakeFiles/my_app.dir/external/glad/glad.c.o" "gcc" "CMakeFiles/my_app.dir/external/glad/glad.c.o.d"
   "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-12-Multiple Lighting/src/main.cpp" "CMakeFiles/my_app.dir/src/main.cpp.o" "gcc" "CMakeFiles/my_app.dir/src/main.cpp.o.d"
   )
 
