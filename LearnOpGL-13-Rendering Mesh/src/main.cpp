@@ -1,12 +1,9 @@
 #include <iostream>
 #include <cmath>
-
 // GLAD
 #include <glad/glad.h>
-
 // GLFW
 #include <GLFW/glfw3.h>
-
 // Other Libs
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -14,12 +11,10 @@
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
-
 // GLM Mathematics
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
 // Other includes
 #include "shader.h"
 #include "assets.h"

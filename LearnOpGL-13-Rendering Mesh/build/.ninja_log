@@ -1,0 +1,4 @@
+# ninja log v6
+2	87	1765900237694494315	CMakeFiles/my_app.dir/external/glad/glad.c.o	38ea65bd9a7a34da
+1	1306	1765900237693494304	CMakeFiles/my_app.dir/src/main.cpp.o	b64fc32155ea280d
+1307	1414	1765900238999509105	my_app	2168598a6e84abbe

@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build",
+  "command": "/usr/bin/g++ -I\"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/external\" -I\"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/include\" -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/my_app.dir/src/main.cpp.o -c \"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/src/main.cpp\"",
+  "file": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/src/main.cpp",
+  "output": "CMakeFiles/my_app.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build",
+  "command": "/usr/bin/gcc -I\"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/external\" -I\"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/include\" -g -fdiagnostics-color=always -o CMakeFiles/my_app.dir/external/glad/glad.c.o -c \"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/external/glad/glad.c\"",
+  "file": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/external/glad/glad.c",
+  "output": "CMakeFiles/my_app.dir/external/glad/glad.c.o"
+},
+{
+  "directory": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build",
+  "command": "/usr/bin/g++ -I\"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/external\" -I\"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/include\" -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/my_app.dir/src/mesh.cpp.o -c \"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/src/mesh.cpp\"",
+  "file": "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/src/mesh.cpp",
+  "output": "CMakeFiles/my_app.dir/src/mesh.cpp.o"
+}
+]

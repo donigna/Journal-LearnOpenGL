@@ -14,6 +14,9 @@ link_directories($ENV{CMAKE_ROOT}/usr/lib)
 add_executable(my_app 
 src/main.cpp
 external/glad/glad.c
+        src/mesh.cpp
+        include/mesh.h
+        include/data.h
 )
 
 # Include dirrectories

@@ -1,0 +1,4 @@
+/home/donigna/Downloads/Development/CLion-2025.2.3/clion-2025.2.3/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/donigna/Downloads/Development/CLion-2025.2.3/clion-2025.2.3/bin/ninja/linux/x64/ninja -G Ninja -S "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh" -B "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build"
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build
