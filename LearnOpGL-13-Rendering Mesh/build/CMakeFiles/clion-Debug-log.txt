@@ -1,4 +1,21 @@
 /home/donigna/Downloads/Development/CLion-2025.2.3/clion-2025.2.3/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/donigna/Downloads/Development/CLion-2025.2.3/clion-2025.2.3/bin/ninja/linux/x64/ninja -G Ninja -S "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh" -B "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build"
--- Configuring done (0.0s)
--- Generating done (0.0s)
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+-- Shared libraries enabled
+-- GCC13 detected disabling "-Wdangling-reference" in Cpp files as it appears to be a false positive
+-- Looking for ZLIB...
+-- Checking for module 'zzip-zlib-config'
+--   Package 'zzip-zlib-config', required by 'virtual:world', not found
+-- Found ZLIB: optimized;/usr/lib/x86_64-linux-gnu/libz.so;debug;/usr/lib/x86_64-linux-gnu/libz.so
+-- Checking for module 'minizip'
+--   Package 'minizip', required by 'virtual:world', not found
+-- GCC13 detected disabling "-Warray-bounds and -Wstringop-overflow" for AssetLib/MDL/MDLLoader.cpp as it appears to be a false positive
+-- VRML disabled
+-- tinyusdz disabled
+-- Enabled importer formats: AMF 3DS AC ASE ASSBIN B3D BVH COLLADA DXF CSM HMP IRRMESH IQM IRR LWO LWS MD2 MD3 MD5 MDC MDL NFF NDO OFF OBJ OGRE OPENGEX PLY MS3D COB BLEND IFC XGL FBX Q3D Q3BSP RAW SIB SMD STL TERRAGEN 3D X X3D GLTF 3MF MMD
+-- Disabled importer formats: USD
+-- Enabled exporter formats: OBJ OPENGEX PLY 3DS ASSBIN ASSXML COLLADA FBX STL X X3D GLTF 3MF PBRT ASSJSON STEP
+-- Disabled exporter formats:
+-- Treating all warnings as errors (for assimp library only)
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
 -- Build files have been written to: /home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build

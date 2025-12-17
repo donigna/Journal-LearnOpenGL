@@ -2,7 +2,7 @@
 #include "mesh.h"
 
 
-Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures)
+Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures)
 {
     this->vertices = vertices;
     this->indices = indices;
@@ -47,16 +47,16 @@ void Mesh::Draw (Shader shader)
     for (GLuint i = 0; i < textures.size(); i++)
     {
         glActiveTexture(GL_TEXTURE0 + i);
-        stringstream ss;
-        string number;
-        string name = this->textures[i].type;
+        std::stringstream ss;
+        std::string number;
+        std::string name = this->textures[i].type;
         if (name == "texture_diffuse")
             ss << diffuseNr++;
         else if (name == "texture_specular")
             ss << specularNr++;
         number = ss.str();
 
-        glUniform1f(glGetUniformLocation(shader.Program, ("material." + name + number).c_str()), i);
+        glUniform1f(glGetUniformLocation(shader.ID, ("material." + name + number).c_str()), i);
         glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
     }
     glActiveTexture(GL_TEXTURE0);

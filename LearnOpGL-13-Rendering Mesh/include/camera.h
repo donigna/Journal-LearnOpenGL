@@ -85,10 +85,10 @@ public:
 
         if (constrainPitch)
         {
-            if (this->Pitch > 89.0f)
-                this->Pitch = 89.0f;
-            if (this->Pitch < -89.0f)
-                this->Pitch = -89.0F;
+            if (this->Pitch > 45.0f)
+                this->Pitch = 45.0f;
+            if (this->Pitch < -45.0f)
+                this->Pitch = -45.0F;
         }
 
         this->UpdateCameraVectors();

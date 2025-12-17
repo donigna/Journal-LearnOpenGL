@@ -7,16 +7,17 @@ cmake_policy(SET CMP0072 NEW)
 
 find_package(OpenGL REQUIRED)
 
+add_subdirectory(external/assimp)
+
 # Path to GLFW by manual installation
 include_directories($ENV{CMAKE_ROOT}/usr/include)
 link_directories($ENV{CMAKE_ROOT}/usr/lib)
 
-add_executable(my_app 
-src/main.cpp
-external/glad/glad.c
+add_executable(my_app
         src/mesh.cpp
-        include/mesh.h
-        include/data.h
+        src/model.cpp
+        src/main.cpp
+        external/glad/glad.c
 )
 
 # Include dirrectories
@@ -31,5 +32,6 @@ target_link_libraries(my_app PRIVATE
     glfw 
     m 
     dl
+        assimp
 )
 

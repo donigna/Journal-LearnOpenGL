@@ -5,9 +5,9 @@
 #ifndef MYAPP_DATA_H
 #define MYAPP_DATA_H
 
-#include <glm/glm.hpp>
-#include <GLFW/glfw3.h>
 #include <string>
+#include <glm/glm.hpp>
+#include "assimp/types.h"
 
 // Struct
 struct Vertex
@@ -19,8 +19,9 @@ struct Vertex
 
 struct Texture
 {
-    GLuint id;
+    uint id;
     std::string type;
+    aiString path; // Store the path of the texture to compare with other textures.fbm
 };
 
 #endif //MYAPP_DATA_H

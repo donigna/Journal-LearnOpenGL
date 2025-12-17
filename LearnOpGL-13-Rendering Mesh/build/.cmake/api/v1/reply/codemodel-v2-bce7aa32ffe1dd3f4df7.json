@@ -1,0 +1,174 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "external/assimp",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external.assimp-Debug-8c99e4b91127d619821f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "external/assimp",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "external/assimp/code",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external.assimp.code-Debug-6cf25bcd04b16c8e1e48.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "external/assimp/code",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "external/assimp/test",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-external.assimp.test-Debug-e8ef53d6c457bd3eb309.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "external/assimp/test",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "external/assimp/test/headercheck",
+					"jsonFile" : "directory-external.assimp.test.headercheck-Debug-55667fb3fd35c462ee55.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "external/assimp/test/headercheck"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MyApp",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "Assimp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "assimp::@f3a6284ec5dbac1d6aa0",
+					"jsonFile" : "target-assimp-Debug-e2ad75576b5359c573b6.json",
+					"name" : "assimp",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "my_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-my_app-Debug-10933cd7386cc1d5f9f7.json",
+					"name" : "my_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@3253ab71256c6811a023",
+					"jsonFile" : "target-uninstall-Debug-21fef56a6f559cf037d9.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "unit::@fef23bd2ce31f13f63ea",
+					"jsonFile" : "target-unit-Debug-c1ed74075627d8aeaf09.json",
+					"name" : "unit",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh/build",
+		"source" : "/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-13-Rendering Mesh"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}
