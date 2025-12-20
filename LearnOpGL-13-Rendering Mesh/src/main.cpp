@@ -17,6 +17,7 @@
 #include "camera.h"
 #include "arcball_camera.h"
 #include "model.h"
+#include "object/cube.h"
 
 // Function prototypes
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height);
@@ -52,7 +53,6 @@ glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 GLfloat deltaTime = 0.0f; // Time between current frame and last frame
 GLfloat lastFrame = 0.0f; // Time of last frame
 
-// The MAIN function, from here we start the application and run the game loop
 int main()
 {
     // Init GLFW
@@ -83,37 +83,27 @@ int main()
         return -1;
     }
 
-    glm::vec3 pointLightPositions[] = {
-        glm::vec3(0.7f, 0.2f, 2.0f),
-        glm::vec3(2.3f, -3.3f, -4.0f),
-        glm::vec3(-4.0f, 2.0f, -12.0f),
-        glm::vec3(0.0f, 0.0f, -3.0f),
-    };
-
     stbi_set_flip_vertically_on_load(true);
 
     glEnable(GL_DEPTH_TEST);
 
-    // Shader lampShader(Assets::light_source_vert.c_str(), Assets::light_source_frag.c_str());
     Shader ourShader("../assets/shaders/1_model_loading.vert", "../assets/shaders/1_model_loading.frag");
     glEnable(GL_CULL_FACE);
     Model ourModel("../assets/models/backpack/backpack.obj");
 
-    GLuint lightVAO;
-    glGenVertexArrays(1, &lightVAO);
-    glBindVertexArray(lightVAO);
-    // Set the vertex attributes (only position data for the lamp))
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid *)0); // Note that we skip over the other data in our buffer object (we don't need the normals/textures, only positions).
-    glEnableVertexAttribArray(0);
-    glBindVertexArray(0);
+
+    Shader cubeShader("../assets/shaders/object_shader.vert", "../assets/shaders/object_shader.frag");
+    Cube cube(0.5f, glm::vec3(0.5f), glm::vec3(1));
+
+    // orbit variable
+    float orbitRadius = 3.0f;
+    float orbitAngularSpeed = 1.0f;
+    float orbitAngle = 0.0f;
 
     // Game loop
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
-        // float currentFrame = static_cast<float>(glfwGetTime());
-        // deltaTime = currentFrame - lastFrame;
-        // lastFrame = currentFrame;
 
         // input
         processInput(window);
@@ -122,9 +112,15 @@ int main()
         glClearColor(0.05f, 0.05f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
         // don't forget to enable shader before setting uniforms
         ourShader.Use();
+
+        float currentFrame = glfwGetTime();
+        static float lastFrame = currentFrame;
+        float deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+        orbitAngle += orbitAngularSpeed * deltaTime;
+        glm::vec3 lightPos = glm::vec3(orbitRadius * cos(orbitAngle), 0, orbitRadius * sin(orbitAngle));
 
         glm::mat4 model = arcballCam.getRotationMatrix();
         glm::mat4 view = glm::lookAt(
@@ -143,25 +139,26 @@ int main()
         ourShader.SetMat4("model", model);
         ourShader.SetMat4("projection", projection);
         ourShader.SetMat4("view", view);
-
-
-        // view projection arcball cam
-
-        // glUniformMatrix4fv(glGetUniformLocation(ourShader.ID, "model"), 1, GL_FALSE, glm::value_ptr(model));
-
-        // view projection cam
-        // glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float) WIDTH / (float) HEIGHT, 0.1f, 100.0f);
-        // glUniformMatrix4fv(glGetUniformLocation(ourShader.ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
-        // glUniformMatrix4fv(glGetUniformLocation(ourShader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-        // glm::mat4 view = camera.GetViewMatrix();
+        ourShader.SetVec3("lightPos", lightPos);
+        ourShader.SetVec3("lightColor", glm::vec3(1.0f,1.0f, 1.0f));
 
         // render the loaded model
         ourModel.Draw(ourShader);
 
+        cubeShader.Use();
+
+        model = arcballCam.getRotationMatrix();
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f));
+        cubeShader.SetMat4("model", model);
+        cubeShader.SetMat4("view", view);
+        cubeShader.SetMat4("projection", projection);
+        cubeShader.SetVec3("lightColor", glm::vec3(1.0f,1.0f, 1.0f));
+
+        cube.Draw(cubeShader);
 
         // Swap the screen buffers
         glfwSwapBuffers(window);
-        // glfwPollEvents();
     }
 
     // Terminate GLFW, clearing any resources allocated by GLFW.
@@ -173,16 +170,6 @@ void processInput(GLFWwindow* window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
-
-    // Activate this if you using First person camera
-    // if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(FORWARD, deltaTime);
-    // if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(BACKWARD, deltaTime);
-    // if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(LEFT, deltaTime);
-    // if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(RIGHT, deltaTime);
 }
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
@@ -207,51 +194,12 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE);
-    // if (key >= 0 && key < 1024)
-    // {
-    //     if (action == GLFW_PRESS)
-    //         keys[key] = true;
-    //     else if (action == GLFW_RELEASE)
-    //         keys[key] = false;
-    // }
 }
 
 void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 {
     arcballCam.drag(xpos,ypos);
 }
-
-void do_movement()
-{
-    // Camera controls
-    // if (keys[GLFW_KEY_W])
-    //     camera.ProcessKeyboard(FORWARD, deltaTime);
-    // if (keys[GLFW_KEY_S])
-    //     camera.ProcessKeyboard(BACKWARD, deltaTime);
-    // if (keys[GLFW_KEY_A])
-    //     camera.ProcessKeyboard(LEFT, deltaTime);
-    // if (keys[GLFW_KEY_D])
-    //     camera.ProcessKeyboard(RIGHT, deltaTime);
-}
-
-// bool firstMouse = true;
-// void mouse_callback(GLFWwindow *window, double xpos, double ypos)
-// {
-//     if (firstMouse)
-//     {
-//         lastX = xpos;
-//         lastY = ypos;
-//         firstMouse = false;
-//     }
-//
-//     GLfloat xoffset = xpos - lastX;
-//     GLfloat yoffset = lastY - ypos; // Reversed since y-coordinates go from bottom to left
-//
-//     lastX = xpos;
-//     lastY = ypos;
-//
-//     camera.ProcessMouseMovement(xoffset, yoffset);
-// }
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 {
