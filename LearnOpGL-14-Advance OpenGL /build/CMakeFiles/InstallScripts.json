@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-14-Advance OpenGL /build/cmake_install.cmake",
+		"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-14-Advance OpenGL /build/external/assimp/cmake_install.cmake",
+		"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-14-Advance OpenGL /build/external/assimp/code/cmake_install.cmake",
+		"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-14-Advance OpenGL /build/external/assimp/test/cmake_install.cmake",
+		"/home/donigna/OpenGL/LearnOpenGL/LearnOpGL-14-Advance OpenGL /build/external/assimp/test/headercheck/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

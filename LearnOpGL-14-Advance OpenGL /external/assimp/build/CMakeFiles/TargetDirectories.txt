@@ -1,0 +1,14 @@
+/home/donigna/Downloads/Development/assimp-6.0.2/build/CMakeFiles/uninstall.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/CMakeFiles/edit_cache.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/CMakeFiles/rebuild_cache.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/CMakeFiles/list_install_components.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/CMakeFiles/install.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/CMakeFiles/install/local.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/CMakeFiles/install/strip.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/code/CMakeFiles/assimp.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/code/CMakeFiles/edit_cache.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/code/CMakeFiles/rebuild_cache.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/code/CMakeFiles/list_install_components.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/code/CMakeFiles/install.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/code/CMakeFiles/install/local.dir
+/home/donigna/Downloads/Development/assimp-6.0.2/build/code/CMakeFiles/install/strip.dir
