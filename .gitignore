@@ -1,0 +1,49 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Build output (CMake)
+build/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+compile_commands.json
+install_manifest.txt
+*.cmake
+
+# Ninja / Make
+.ninja*
+*.make
+
+# MSBuild / binaries
+Debug/
+Release/
+x64/
+Win32/
+bin/
+lib/
+
+# Executables and objects
+*.exe
+*.dll
+*.pdb
+*.obj
+*.ilk
+*.exp
+*.lib
+
+# Logs
+*.log

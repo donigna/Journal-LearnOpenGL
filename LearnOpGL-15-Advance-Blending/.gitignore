@@ -1,0 +1,31 @@
+# Editor
+.vs/
+.vscode/
+.idea/
+
+# Directory
+build/
+out/
+vcpkg_installed/
+
+# MSBuild / binaries
+Debug/
+Release/
+x64/
+Win32/
+bin/
+lib/
+.git/
+
+# Executables and objects
+*.exe
+*.dll
+*.pdb
+*.obj
+*.ilk
+*.exp
+*.lib
+vcpkg.json
+
+# Logs
+*.log

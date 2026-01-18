@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    "opengl",
+    "assimp",
+    "glfw3",
+    "glad",
+    "glm"
+  ],
+  "builtin-baseline": "0e6cad2671db0b1e995f01e8c5d6f05cc4dd3afc"
+}
